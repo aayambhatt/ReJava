@@ -3,11 +3,11 @@ package A_OOP.BankAcc;
 import java.math.BigDecimal;
 
 public class BankAccount {
-    private String accountName;
-    private String accountNum;
+    private final String accountName;
+    private final String accountNum;
     private BigDecimal accBalance;
 
-    BankAccount(String accountName, String accountNum, BigDecimal accBalance){
+   public BankAccount(String accountName, String accountNum, BigDecimal accBalance){
             if (accountName == null || accountName.isBlank()) {
                 throw new IllegalArgumentException("Account name cannot be null or blank.");
             }
@@ -31,11 +31,11 @@ public class BankAccount {
     }
 
 
-    BigDecimal getAccBalance(){
+   public BigDecimal getAccBalance(){
         return accBalance;
     }
 
-    BigDecimal deposit(BigDecimal amount){
+   public BigDecimal deposit(BigDecimal amount){
         if (amount == null) {
             throw new IllegalArgumentException("Deposit amount cannot be null.");
         }
@@ -50,7 +50,7 @@ public class BankAccount {
 
     }
 
-    BigDecimal withdraw(BigDecimal amount){
+   public BigDecimal withdraw(BigDecimal amount){
         if(amount == null){
             throw new IllegalArgumentException("Withdrawal amount cannot be null");
         }
