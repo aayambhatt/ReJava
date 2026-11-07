@@ -30,6 +30,11 @@ public class BankAccount {
 
     }
 
+    // new 2 argument constructor that delegates to the one above
+    public BankAccount(String accountName, String accountNum){
+       this(accountName, accountNum, BigDecimal.ZERO);
+    }
+
 
    public BigDecimal getAccBalance(){
         return accBalance;
